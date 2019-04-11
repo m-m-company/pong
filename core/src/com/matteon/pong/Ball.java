@@ -23,8 +23,7 @@ public class Ball extends Circle{
             	dy = 3;
             }
             dx *= -1;
-            this.setCenterY(this.getCenterY() + player.getWidth());
-
+            this.setCenterX(this.getCenterX() + player.getWidth());
         }
         if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) 
         {
@@ -34,7 +33,7 @@ public class Ball extends Circle{
                 dy = -3;
             }
             dx *= -1;
-            this.setCenterY(this.getCenterY() - second.getWidth());
+            this.setCenterX(this.getCenterX() - player.getWidth());
         }
         if (this.getCenterY() + this.getRadius() >= 600 || this.getCenterY() - this.getRadius() <= 0) {
             dy *= -1;
