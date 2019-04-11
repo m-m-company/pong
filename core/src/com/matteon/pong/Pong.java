@@ -25,6 +25,7 @@ public class Pong extends ApplicationAdapter {
     BitmapFont pointsPlayer;
     BitmapFont pointsSecond;
     ArrayList<Rectangle> obstacles;
+    int up;
 
     @Override
     public void create() {
@@ -55,10 +56,15 @@ public class Pong extends ApplicationAdapter {
             player.moveUp(Gdx.graphics.getDeltaTime());
         if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
             player.moveDown(Gdx.graphics.getDeltaTime());
-        if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < 555)
+        up = inteligent(second.getX(), second.getY(), ball.getCenterX(), ball.getCenterY());
+        if(up == 1 && second.getY() < 555)
+        	second.moveUp(Gdx.graphics.getDeltaTime());
+        if(up == 2 && second.getY() > 0)
+        	second.moveDown(Gdx.graphics.getDeltaTime());
+        /*if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < 555)
             second.moveUp(Gdx.graphics.getDeltaTime());
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && second.getY() > 0)
-            second.moveDown(Gdx.graphics.getDeltaTime());
+            second.moveDown(Gdx.graphics.getDeltaTime());*/
         ball.update(player, second);
         if(ball.getCenterX() <0) {
             player.addPoint();
@@ -89,6 +95,16 @@ public class Pong extends ApplicationAdapter {
         pointsPlayer.draw(batch, second.getPoints().toString(), 450, 550);
         batch.end();
 
+    }
+    
+    public int inteligent(double myX, double myY, double ballX, double ballY) {
+    	if(myX - ballX > 300)
+    		return 0;
+    	if(myY < ballY)
+    		return 1;
+    	if(myY > ballY)
+    		return 2;
+    	return 0;
     }
 
     @Override
