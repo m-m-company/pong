@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
@@ -31,8 +30,8 @@ public class Pong extends ApplicationAdapter {
     public void create() {
         pointsPlayer = new BitmapFont();
         pointsSecond = new BitmapFont();
-        System.out.println(Gdx.graphics.getWidth());
-        System.out.println(Gdx.graphics.getHeight());
+        //System.out.println(Gdx.graphics.getWidth());
+        //System.out.println(Gdx.graphics.getHeight());
         batch = new SpriteBatch();
         obstacles = new ArrayList<Rectangle>();
         camera = new OrthographicCamera();
@@ -40,52 +39,54 @@ public class Pong extends ApplicationAdapter {
         sh = new ShapeRenderer();
         sh.setProjectionMatrix(camera.combined);
         batch.setProjectionMatrix(camera.combined);
-        for (int i = 10; i < 800; i += 40) {
+        /*for (int i = 10; i < 800; i += 40) {
             obstacles.add(new Rectangle(i, 600 / 2, 20, 20));
-        }
-        player = new Bar(380, 580);
-        second = new Bar(380, 20);
+        }*/
+        player = new Bar(0, 300);
+        second = new Bar(795, 300);
         ball = new Ball(800 / 2, 600 / 2, 15);
     }
 
     @Override
     public void render() {
-        Gdx.gl.glClearColor(1, 0, 0, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT))
-            player.moveLeft(Gdx.graphics.getDeltaTime());
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT))
-            player.moveRight(Gdx.graphics.getDeltaTime());
-        if (Gdx.input.isKeyPressed(Input.Keys.A))
-            second.moveLeft(Gdx.graphics.getDeltaTime());
-        if (Gdx.input.isKeyPressed(Input.Keys.D))
-            second.moveRight(Gdx.graphics.getDeltaTime());
+        if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < 555)
+            player.moveUp(Gdx.graphics.getDeltaTime());
+        if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
+            player.moveDown(Gdx.graphics.getDeltaTime());
+        if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < 555)
+            second.moveUp(Gdx.graphics.getDeltaTime());
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && second.getY() > 0)
+            second.moveDown(Gdx.graphics.getDeltaTime());
         ball.update(player, second);
-        if(ball.getBall().getCenterY() <0) {
+        if(ball.getCenterX() <0) {
             player.addPoint();
-            ball.getBall().setCenterY(800/2);
+            ball.setCenterX(400);
+            ball.setCenterY(300);
         }
-        if(ball.getBall().getCenterY() >600) {
-            ball.getBall().setCenterY(800/2);
-            second.addPoint();
+        if(ball.getCenterX() >800) {
+        	second.addPoint();
+            ball.setCenterX(400);
+            ball.setCenterY(300);
         }
 
         sh.begin(ShapeRenderer.ShapeType.Filled);
         sh.setColor(Color.WHITE);
-        sh.rect(player.getRect().x, player.getRect().y, player.getRect().width, player.getRect().height);
-        sh.rect(second.getRect().x, second.getRect().y, second.getRect().width, second.getRect().height);
-        for (Rectangle r : obstacles)
-            sh.rect(r.x, r.y, r.width, r.height);
+        sh.rect(player.x, player.y, player.width, player.height);
+        sh.rect(second.x, second.y, second.width, second.height);
+        /*for (Rectangle r : obstacles)
+            sh.rect(r.x, r.y, r.width, r.height);*/
         sh.setColor(Color.YELLOW);
-        sh.circle((float) ball.getBall().getCenterX(), (float) ball.getBall().getCenterY(),
-                (float) ball.getBall().getRadius());
+        sh.circle((float) ball.getCenterX(), (float) ball.getCenterY(),
+                (float) ball.getRadius());
         sh.end();
 
         batch.begin();
         pointsPlayer.setColor(Color.WHITE);
         pointsSecond.setColor(Color.WHITE);
-        pointsSecond.draw(batch, player.getPoints().toString(), 800-50, 300+50);
-        pointsPlayer.draw(batch, second.getPoints().toString(), 800-50, 300-50);
+        pointsSecond.draw(batch, player.getPoints().toString(), 350, 550);
+        pointsPlayer.draw(batch, second.getPoints().toString(), 450, 550);
         batch.end();
 
     }
@@ -93,6 +94,5 @@ public class Pong extends ApplicationAdapter {
     @Override
     public void dispose() {
         batch.dispose();
-        img.dispose();
     }
 }
