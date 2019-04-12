@@ -10,8 +10,8 @@ public class Ball extends Circle{
         this.setCenterX(x);
         this.setCenterY(y);
         this.setRadius(radius);
-        dx = -3;
-        dy = -3;
+        dx = -4;
+        dy = -4;
     }
 
     public void update(Bar player, Bar second) {
@@ -20,7 +20,7 @@ public class Ball extends Circle{
         	System.out.println("ciao");
             Vector2 v = new Vector2();
             if (player.getCenter(v).x >= this.getCenterX()) {
-            	dy = 3;
+            	dy = 4;
             }
             dx *= -1;
             this.setCenterX(this.getCenterX() + player.getWidth());
@@ -28,9 +28,9 @@ public class Ball extends Circle{
         if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) 
         {
             Vector2 v = new Vector2();
-            if (second.getCenter(v).x >= this.getCenterX()) {
+            if (second.getCenter(v).x <= this.getCenterX()) {
                 System.out.println("intersect");
-                dy = -3;
+                dy = -4;
             }
             dx *= -1;
             this.setCenterX(this.getCenterX() - player.getWidth());

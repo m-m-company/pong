@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-
 import java.util.ArrayList;
 
 public class Pong extends ApplicationAdapter {
@@ -98,8 +97,9 @@ public class Pong extends ApplicationAdapter {
     }
     
     public int inteligent(double myX, double myY, double ballX, double ballY) {
-    	if(myX - ballX > 300)
+    	if(myX - ballX > 300) {
     		return 0;
+    	}
     	if(myY < ballY)
     		return 1;
     	if(myY > ballY)
