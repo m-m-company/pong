@@ -30,8 +30,6 @@ public class Pong extends ApplicationAdapter {
     public void create() {
         pointsPlayer = new BitmapFont();
         pointsSecond = new BitmapFont();
-        //System.out.println(Gdx.graphics.getWidth());
-        //System.out.println(Gdx.graphics.getHeight());
         batch = new SpriteBatch();
         obstacles = new ArrayList<Rectangle>();
         camera = new OrthographicCamera();
@@ -39,11 +37,8 @@ public class Pong extends ApplicationAdapter {
         sh = new ShapeRenderer();
         sh.setProjectionMatrix(camera.combined);
         batch.setProjectionMatrix(camera.combined);
-        /*for (int i = 10; i < 800; i += 40) {
-            obstacles.add(new Rectangle(i, 600 / 2, 20, 20));
-        }*/
-        player = new Bar(0, 300);
-        second = new Bar(795, 300);
+        player = new Bar(Bar.WIDTH, 300);
+        second = new Bar(800 - Bar.WIDTH*2, 300);
         ball = new Ball(800 / 2, 600 / 2, 15);
     }
 
