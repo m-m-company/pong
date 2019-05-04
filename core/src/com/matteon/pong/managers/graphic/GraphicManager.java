@@ -15,7 +15,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.matteon.pong.Ball;
 import com.matteon.pong.Paddle;
 
-public class GrapichManager {
+public class GraphicManager {
 
 	ArrayList<Rectangle> midField;
 	ShapeRenderer sh;
@@ -26,7 +26,7 @@ public class GrapichManager {
 	FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 	BitmapFont font;
 
-	public GrapichManager() {
+	public GraphicManager() {
 		batch = new SpriteBatch();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 600);

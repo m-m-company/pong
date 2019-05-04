@@ -3,15 +3,18 @@ package com.matteon.pong;
 import com.badlogic.gdx.math.Vector2;
 import javafx.scene.shape.Circle;
 
-public class Ball extends Circle{
+public class Ball extends Circle {
     float dx, dy;
+
     public int getSpeedMode() {
-		return speedMode;
-	}
-	public void setSpeedMode(int speedMode) {
-		this.speedMode = speedMode;
-	}
-	private int speedMode;
+        return speedMode;
+    }
+
+    public void setSpeedMode(int speedMode) {
+        this.speedMode = speedMode;
+    }
+
+    private int speedMode;
 
     public Ball(int x, int y, int radius) {
         this.setCenterX(x);
@@ -21,21 +24,20 @@ public class Ball extends Circle{
         dx = -4;
         dy = -4;
     }
+
     public boolean update(Paddle player, Paddle second) {
-    	boolean returnValue = false;
-        if (this.intersects(player.getX(), player.getY(), player.getWidth(), player.getHeight())) 
-        {
-        	System.out.println("ciao");
+        boolean returnValue = false;
+        if (this.intersects(player.getX(), player.getY(), player.getWidth(), player.getHeight())) {
+            System.out.println("ciao");
             Vector2 v = new Vector2();
             if (player.getCenter(v).x >= this.getCenterX()) {
-            	dy = 4;
+                dy = 4;
             }
             dx *= -1;
             this.setCenterX(this.getCenterX() + player.getWidth());
             returnValue = true;
         }
-        if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) 
-        {
+        if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) {
             Vector2 v = new Vector2();
             if (second.getCenter(v).x <= this.getCenterX()) {
                 System.out.println("intersect");
@@ -49,8 +51,8 @@ public class Ball extends Circle{
             dy *= -1;
             returnValue = false;
         }
-        this.setCenterX(this.getCenterX() + dx + dx*1.5f*speedMode);
-        this.setCenterY(this.getCenterY() + dy + dy*1.5f*speedMode);
+        this.setCenterX(this.getCenterX() + dx + dx * 1.5f * speedMode);
+        this.setCenterY(this.getCenterY() + dy + dy * 1.5f * speedMode);
         return returnValue;
     }
 }
