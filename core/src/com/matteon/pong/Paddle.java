@@ -2,7 +2,7 @@ package com.matteon.pong;
 
 import com.badlogic.gdx.math.Rectangle;
 
-public class Bar  extends Rectangle{
+public class Paddle  extends Rectangle{
 	
 	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 10;
@@ -18,11 +18,11 @@ public class Bar  extends Rectangle{
         this.points = points;
     }
     public void addPoint(){points++;}
-    public Bar(int x, int y) {
+    public Paddle(int x, int y) {
         this.setX(x);
         this.setY(y);
-        this.setWidth(Bar.WIDTH);
-        this.setHeight(Bar.HEIGHT);
+        this.setWidth(Paddle.WIDTH);
+        this.setHeight(Paddle.HEIGHT);
         points = 0;
         speed = 200;
     }
