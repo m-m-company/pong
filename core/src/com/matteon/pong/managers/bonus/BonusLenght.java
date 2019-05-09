@@ -11,7 +11,8 @@ public class BonusLenght extends Bonus {
 
     @Override
     public void activate(boolean whosLast, Paddle player1, Paddle player2) {
-        if (whosLast) {
+    	this.isActive = true;
+    	if (whosLast) {
             player1.setHeight(Paddle.HEIGHT + AUGMENT);
             affectedPaddle = player1;
         } else {
@@ -22,6 +23,7 @@ public class BonusLenght extends Bonus {
 
     @Override
     public void deactivate() {
+    	this.isActive = false;
         affectedPaddle.setHeight(Paddle.HEIGHT);
     }
 }

@@ -9,12 +9,15 @@ public class BonusPoint extends Bonus {
 
     @Override
     public void activate(boolean whosLast, Paddle player1, Paddle player2) {
-        if (whosLast)
+    	this.isActive = true;
+    	if (whosLast)
             player1.addPoint();
         else
             player2.addPoint();
     }
 
     @Override
-    public void deactivate() {}
+    public void deactivate() {
+    	this.isActive = false;
+    }
 }

@@ -14,6 +14,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
 import com.matteon.pong.Ball;
 import com.matteon.pong.Paddle;
+import com.matteon.pong.managers.bonus.Bonus;
+import com.matteon.pong.managers.bonus.BonusManager;
 
 public class GraphicManager {
 
@@ -36,7 +38,7 @@ public class GraphicManager {
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("font.otf"));
 		parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		parameter.size = 36;
-		parameter.color = Color.RED;
+		parameter.color = Color.WHITE;
 		font = generator.generateFont(parameter);
 		midField = new ArrayList<Rectangle>();
 		int y = 0;
@@ -45,7 +47,14 @@ public class GraphicManager {
 			y+=30;
 		}
 	}
-
+	
+	public void drawBonus(Bonus bonus) {
+		batch.begin();
+		if(bonus != null && !bonus.isActive())
+			batch.draw(bonus.getTexture(), bonus.getX(), bonus.getY());
+		batch.end();
+	}
+	
 	public void drawPaddle(Paddle paddle) {
 		sh.begin(ShapeRenderer.ShapeType.Filled);
 		sh.setColor(Color.WHITE);

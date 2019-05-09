@@ -9,17 +9,19 @@ public class BonusSpeed extends Bonus {
 
     @Override
     public void activate(boolean whosLast, Paddle player1, Paddle player2) {
-        if (whosLast) {
-            player1.setSpeed(Paddle.DEFAULT_SPEED * 2);
-            affectedPaddle = player1;
+    	this.isActive = true;
+    	if (whosLast) {
+        	player1.setSpeed(Paddle.DEFAULT_SPEED * 2);
+        	affectedPaddle = player1;
         } else {
-            player2.setSpeed(Paddle.DEFAULT_SPEED * 2);
-            affectedPaddle = player2;
+        	System.out.println(player2.getSpeed());
+        	affectedPaddle = player2;
         }
     }
 
     @Override
     public void deactivate() {
+    	this.isActive = false;
         affectedPaddle.setSpeed(Paddle.DEFAULT_SPEED);
     }
 }

@@ -5,7 +5,7 @@ import javafx.scene.shape.Circle;
 
 public class Ball extends Circle {
     float dx, dy;
-
+    public boolean whoHittedMe;
     public int getSpeedMode() {
         return speedMode;
     }
@@ -34,16 +34,17 @@ public class Ball extends Circle {
                 dy = 4;
             }
             dx *= -1;
+            whoHittedMe = true;
             this.setCenterX(this.getCenterX() + player.getWidth());
             returnValue = true;
         }
         if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) {
             Vector2 v = new Vector2();
             if (second.getCenter(v).x <= this.getCenterX()) {
-                System.out.println("intersect");
                 dy = -4;
             }
             dx *= -1;
+            whoHittedMe = false;
             this.setCenterX(this.getCenterX() - player.getWidth());
             returnValue = true;
         }

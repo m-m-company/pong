@@ -4,12 +4,15 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
+import com.matteon.pong.managers.bonus.BonusManager;
 import com.matteon.pong.managers.graphic.*;
 import com.matteon.pong.managers.sound.SoundManager;
 
 public class Pong extends ApplicationAdapter {
     GraphicManager graphicManager;
     SoundManager soundManager;
+    BonusManager bonusManager;
+    float delay;
     Paddle player;
     Paddle second;
     Ball ball;
@@ -19,6 +22,8 @@ public class Pong extends ApplicationAdapter {
     public void create() {
         soundManager = new SoundManager();
         graphicManager = new GraphicManager();
+        bonusManager = new BonusManager();
+        delay = 0;
         player = new Paddle(Paddle.WIDTH, 300);
         second = new Paddle(800 - Paddle.WIDTH * 2, 300);
         ball = new Ball(800 / 2, 600 / 2, 15);
@@ -29,6 +34,13 @@ public class Pong extends ApplicationAdapter {
     public void render() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        delay+=Gdx.graphics.getDeltaTime();
+        if(delay > 15) {
+        	bonusManager.spawnBonus();
+        	delay = 0;
+        }
+        
+        bonusManager.check(ball, player, second, ball.whoHittedMe);
         if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < 555)
             player.moveUp(Gdx.graphics.getDeltaTime());
         if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
@@ -63,6 +75,7 @@ public class Pong extends ApplicationAdapter {
         }
 
         this.ballHandler();
+        graphicManager.drawBonus(bonusManager.getBonus());
         graphicManager.drawBall(ball);
         graphicManager.drawPaddle(player);
         graphicManager.drawPaddle(second);
