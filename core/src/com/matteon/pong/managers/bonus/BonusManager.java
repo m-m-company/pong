@@ -1,6 +1,5 @@
 package com.matteon.pong.managers.bonus;
 
-import com.badlogic.gdx.Gdx;
 import com.matteon.pong.Ball;
 import com.matteon.pong.Paddle;
 
@@ -8,7 +7,6 @@ import java.util.Random;
 
 public class BonusManager {
     private Bonus actualBonus;
-    private float activeTime = 0;
     public Bonus getBonus() {
     	return actualBonus;
     }
@@ -18,12 +16,15 @@ public class BonusManager {
             new Thread(new Runnable() {
 				@Override
 				public void run() {
-					while(actualBonus.isActive()) {
+                    float activeTime = 0;
+                    Bonus temporary = actualBonus;
+					while(temporary.isActive()) {
 						try {
-							Thread.sleep(1000);
+							Thread.sleep(300);
 							activeTime+=0.1f;
 							if(activeTime>3) {
-								actualBonus.deactivate();
+							    activeTime = 0;
+								temporary.deactivate();
 								return;
 							}
 						} catch (InterruptedException e) {

@@ -12,3 +12,8 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusManager$1.class
+core/build/tmp/compileJava/
+desktop/build/tmp/
+.idea
+.settings

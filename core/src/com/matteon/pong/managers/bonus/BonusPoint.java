@@ -10,6 +10,7 @@ public class BonusPoint extends Bonus {
     @Override
     public void activate(boolean whosLast, Paddle player1, Paddle player2) {
     	this.isActive = true;
+    	this.used = true;
     	if (whosLast)
             player1.addPoint();
         else

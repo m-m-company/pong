@@ -16,13 +16,20 @@ public abstract class Bonus extends Rectangle {
     protected Texture texture;
     protected Paddle affectedPaddle;
     protected boolean isActive;
+    protected boolean used;
+
+    public boolean isUsed() {
+        return used;
+    }
+
     public boolean isActive() {
-    	return isActive;
+        return isActive;
     }
+
     public Texture getTexture() {
-    	return this.texture;
+        return this.texture;
     }
-    
+
     public Bonus(String path) {
         super(new Random().nextInt((Bonus.MAX_X_SPAWN - Bonus.MIN_X_SPAWN) + 1) + Bonus.MIN_X_SPAWN,
                 new Random().nextInt(MAX_Y_SPAWN - MIN_Y_SPAWN + 1) + MIN_Y_SPAWN, 20, 20);

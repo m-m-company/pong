@@ -1,5 +1,6 @@
 package com.matteon.pong;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Rectangle;
 
 public class Paddle extends Rectangle {
@@ -8,6 +9,7 @@ public class Paddle extends Rectangle {
     public static final int WIDTH = 10;
     public static final int HEIGHT = 45;
     public static final int DEFAULT_SPEED = 200;
+    public Color myColor;
     public int getSpeed() {
         return speed;
     }
@@ -32,6 +34,7 @@ public class Paddle extends Rectangle {
         this.setY(y);
         this.setWidth(Paddle.WIDTH);
         this.setHeight(Paddle.HEIGHT);
+        myColor = Color.WHITE;
         points = 0;
         speed = DEFAULT_SPEED;
     }

@@ -50,14 +50,14 @@ public class GraphicManager {
 	
 	public void drawBonus(Bonus bonus) {
 		batch.begin();
-		if(bonus != null && !bonus.isActive())
+		if(bonus != null && !bonus.isUsed())
 			batch.draw(bonus.getTexture(), bonus.getX(), bonus.getY());
 		batch.end();
 	}
 	
 	public void drawPaddle(Paddle paddle) {
 		sh.begin(ShapeRenderer.ShapeType.Filled);
-		sh.setColor(Color.WHITE);
+		sh.setColor(paddle.myColor);
 		sh.rect(paddle.x, paddle.y, paddle.width, paddle.height);
 		sh.end();
 	}
