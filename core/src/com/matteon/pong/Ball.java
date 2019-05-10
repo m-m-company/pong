@@ -4,8 +4,10 @@ import com.badlogic.gdx.math.Vector2;
 import javafx.scene.shape.Circle;
 
 public class Ball extends Circle {
-    float dx, dy;
+    private float dx;
+    private float dy;
     public boolean whoHittedMe;
+
     public int getSpeedMode() {
         return speedMode;
     }
@@ -21,8 +23,8 @@ public class Ball extends Circle {
         this.setCenterY(y);
         this.setRadius(radius);
         speedMode = 0;
-        dx = -4;
-        dy = -4;
+        dx = -5;
+        dy = -5;
     }
 
     public boolean update(Paddle player, Paddle second) {
@@ -31,7 +33,7 @@ public class Ball extends Circle {
             System.out.println("ciao");
             Vector2 v = new Vector2();
             if (player.getCenter(v).x >= this.getCenterX()) {
-                dy = 4;
+                dy = 5;
             }
             dx *= -1;
             whoHittedMe = true;
@@ -41,7 +43,7 @@ public class Ball extends Circle {
         if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) {
             Vector2 v = new Vector2();
             if (second.getCenter(v).x <= this.getCenterX()) {
-                dy = -4;
+                dy = -5;
             }
             dx *= -1;
             whoHittedMe = false;

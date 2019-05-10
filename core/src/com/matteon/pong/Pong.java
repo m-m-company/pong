@@ -5,18 +5,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.matteon.pong.managers.bonus.BonusManager;
-import com.matteon.pong.managers.graphic.*;
+import com.matteon.pong.managers.graphic.GraphicManager;
 import com.matteon.pong.managers.sound.SoundManager;
 
 public class Pong extends ApplicationAdapter {
-    GraphicManager graphicManager;
-    SoundManager soundManager;
-    BonusManager bonusManager;
-    float delay;
-    Paddle player;
-    Paddle second;
-    Ball ball;
-    boolean multiplayer;
+    private GraphicManager graphicManager;
+    private SoundManager soundManager;
+    private BonusManager bonusManager;
+    private float delay;
+    private Paddle player;
+    private Paddle second;
+    private Ball ball;
+    private boolean multiplayer;
 
     @Override
     public void create() {
@@ -34,14 +34,16 @@ public class Pong extends ApplicationAdapter {
     public void render() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        delay+=Gdx.graphics.getDeltaTime();
-        if(delay > 15) {
+        delay += Gdx.graphics.getDeltaTime();
+        if (delay > 15) {
             System.out.println("spawn");
-        	bonusManager.spawnBonus();
-        	delay = 0;
+            bonusManager.spawnBonus();
+            delay = 0;
         }
-        
+
         bonusManager.check(ball, player, second, ball.whoHittedMe);
+        if (Gdx.input.isKeyJustPressed(Input.Keys.Y))
+            player.addPoint();
         if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < 555)
             player.moveUp(Gdx.graphics.getDeltaTime());
         if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
@@ -62,9 +64,9 @@ public class Pong extends ApplicationAdapter {
                 second.setSpeed(Paddle.DEFAULT_SPEED * 2);
                 player.setSpeed(Paddle.DEFAULT_SPEED * 2);
                 ball.setSpeedMode(1);
-            }else{
-                second.setSpeed(Paddle.DEFAULT_SPEED);
-                player.setSpeed(Paddle.DEFAULT_SPEED);
+            } else {
+                second.setSpeed(second.getSpeed());
+                player.setSpeed(player.getSpeed());
                 ball.setSpeedMode(0);
             }
 
@@ -102,7 +104,7 @@ public class Pong extends ApplicationAdapter {
         }
     }
 
-    public int simpleAI(double myX, double myY, double ballX, double ballY, int difficulty) {
+    private int simpleAI(double myX, double myY, double ballX, double ballY, int difficulty) {
         if (myX - ballX > 350 + difficulty * 70) {
             return 0;
         }

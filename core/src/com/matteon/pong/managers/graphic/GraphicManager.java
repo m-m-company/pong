@@ -15,18 +15,16 @@ import com.badlogic.gdx.math.Rectangle;
 import com.matteon.pong.Ball;
 import com.matteon.pong.Paddle;
 import com.matteon.pong.managers.bonus.Bonus;
-import com.matteon.pong.managers.bonus.BonusManager;
 
 public class GraphicManager {
 
-	ArrayList<Rectangle> midField;
-	ShapeRenderer sh;
-	SpriteBatch batch;
-	Texture img;
-	OrthographicCamera camera;
-	FreeTypeFontGenerator generator;
-	FreeTypeFontGenerator.FreeTypeFontParameter parameter;
-	BitmapFont font;
+	private final ArrayList<Rectangle> midField;
+	private final ShapeRenderer sh;
+	private final SpriteBatch batch;
+	private final OrthographicCamera camera;
+	private final FreeTypeFontGenerator generator;
+	private final FreeTypeFontGenerator.FreeTypeFontParameter parameter;
+	private final BitmapFont font;
 
 	public GraphicManager() {
 		batch = new SpriteBatch();
@@ -77,6 +75,7 @@ public class GraphicManager {
 	}
 	public void drawMidfield() {
 		sh.begin(ShapeType.Line);
+		sh.setColor(Color.WHITE);
 		for(Rectangle r : midField) {
 			sh.rect(r.getX(), r.getY(), r.width, r.height);
 		}

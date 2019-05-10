@@ -13,11 +13,11 @@ public class BonusSpeed extends Bonus {
     	this.isActive = true;
     	this.used = true;
     	if (whosLast) {
-        	player1.setSpeed(Paddle.DEFAULT_SPEED * 2);
+        	player1.setSpeed(player1.getSpeed() * 2);
         	player1.myColor = Color.GREEN;
         	affectedPaddle = player1;
         } else {
-        	System.out.println(player2.getSpeed());
+    	    player2.setSpeed(player2.getSpeed()*2);
         	player2.myColor = Color.GREEN;
         	affectedPaddle = player2;
         }

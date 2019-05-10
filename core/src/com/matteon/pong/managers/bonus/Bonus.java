@@ -9,14 +9,14 @@ import com.matteon.pong.Paddle;
 import java.util.Random;
 
 public abstract class Bonus extends Rectangle {
-    private static int MIN_X_SPAWN = 80;
-    private static int MAX_X_SPAWN = 720;
-    private static int MIN_Y_SPAWN = 20;
-    private static int MAX_Y_SPAWN = 580;
-    protected Texture texture;
-    protected Paddle affectedPaddle;
-    protected boolean isActive;
-    protected boolean used;
+    private static final int MIN_X_SPAWN = 80;
+    private static final int MAX_X_SPAWN = 720;
+    private static final int MIN_Y_SPAWN = 20;
+    private static final int MAX_Y_SPAWN = 580;
+    private final Texture texture;
+    Paddle affectedPaddle;
+    boolean isActive;
+    boolean used;
 
     public boolean isUsed() {
         return used;
@@ -30,7 +30,7 @@ public abstract class Bonus extends Rectangle {
         return this.texture;
     }
 
-    public Bonus(String path) {
+    Bonus(String path) {
         super(new Random().nextInt((Bonus.MAX_X_SPAWN - Bonus.MIN_X_SPAWN) + 1) + Bonus.MIN_X_SPAWN,
                 new Random().nextInt(MAX_Y_SPAWN - MIN_Y_SPAWN + 1) + MIN_Y_SPAWN, 20, 20);
         this.texture = new Texture(Gdx.files.internal(path));
