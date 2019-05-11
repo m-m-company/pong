@@ -35,8 +35,7 @@ public class Pong extends ApplicationAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         delay += Gdx.graphics.getDeltaTime();
-        if (delay > 15) {
-            System.out.println("spawn");
+        if (delay > 10) {
             bonusManager.spawnBonus();
             delay = 0;
         }

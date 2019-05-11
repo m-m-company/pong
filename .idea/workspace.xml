@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8204aa32-4e93-4709-a38c-a9364e12ff21" name="Default Changelist" comment="bug fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" afterDir="false" />
@@ -35,52 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#512#1331#0" expanded="true" />
-                <element signature="e#1330#1331#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#673#674#0" expanded="true" />
-                <element signature="e#704#705#0" expanded="true" />
-                <element signature="method#Bonus#0;class#Bonus#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="663">
+              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -110,16 +68,17 @@
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Bar.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GrapichManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/Graphic.java" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusPoint.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusLenght.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/sound/SoundManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" />
       </list>
     </option>
   </component>
@@ -190,12 +149,21 @@
               <item name="managers" type="462c0819:PsiDirectoryNode" />
               <item name="bonus" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pong" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="pong" type="462c0819:PsiDirectoryNode" />
+              <item name="managers" type="462c0819:PsiDirectoryNode" />
+              <item name="sound" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,14 +253,13 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15245202" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15405117" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.25893825" />
@@ -305,6 +272,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021322" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Build" order="10" sideWeight="0.4978678" weight="0.0" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4989339" weight="0.032502707" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -359,35 +327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -402,10 +341,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Bonus#0;class#Bonus#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/sound/SoundManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="721">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -414,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="279">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#512#1331#0" expanded="true" />
@@ -424,26 +381,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="391">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="method#Bonus#0;class#Bonus#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
         </state>
       </provider>
     </entry>

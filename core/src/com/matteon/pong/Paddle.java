@@ -10,6 +10,9 @@ public class Paddle extends Rectangle {
     public static final int HEIGHT = 45;
     public static final int DEFAULT_SPEED = 200;
     public Color myColor;
+    private int speed;
+    private Integer points;
+
     public int getSpeed() {
         return speed;
     }
@@ -17,9 +20,6 @@ public class Paddle extends Rectangle {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-
-    private int speed;
-    private Integer points;
 
     public Integer getPoints() {
         return points;

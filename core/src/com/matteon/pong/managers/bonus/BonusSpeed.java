@@ -27,6 +27,6 @@ public class BonusSpeed extends Bonus {
     public void deactivate() {
     	this.isActive = false;
     	affectedPaddle.myColor = Color.WHITE;
-        affectedPaddle.setSpeed(Paddle.DEFAULT_SPEED);
+        affectedPaddle.setSpeed(affectedPaddle.getSpeed()/2);
     }
 }

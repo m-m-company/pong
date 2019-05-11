@@ -23,15 +23,13 @@ public class BonusManager {
                     while (temporary.isActive()) {
                         try {
                             Thread.sleep(300);
-                            System.out.println(activeTime);
                             activeTime += 0.1f;
                             if (activeTime > 3) {
-                                activeTime = 0;
                                 temporary.deactivate();
                                 return;
                             }
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
+                           return;
                         }
                     }
                 }
@@ -41,7 +39,7 @@ public class BonusManager {
 
     public void spawnBonus() {
         Random r = new Random();
-        int choice = r.nextInt(3);
+        int choice = r.nextInt(1);
         switch (choice) {
             case 0:
                 actualBonus = new BonusSpeed("bonusSpeed.png");

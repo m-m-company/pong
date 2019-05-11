@@ -11,6 +11,7 @@ public class SoundManager {
 		goal = Gdx.audio.newSound(Gdx.files.internal("goal.wav"));
 	}
 	public void playHit() {
+		this.hit.stop();
 		this.hit.play();
 	}
 	public void playGoal() {
