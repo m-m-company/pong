@@ -35,14 +35,15 @@ public class Ball extends Circle {
         if (this.intersects(player.getX(), player.getY(), player.getWidth(), player.getHeight())) {
             Vector2 v = new Vector2();
             if (player.getCenter(v).y >= this.getCenterY()) {
-                System.out.println("prova");
                 dy = -DEFAULT_DY;
             } else {
                 dy = DEFAULT_DY;
             }
             dx = DEFAULT_DX;
             whoHittedMe = true;
-            this.relocate(this.getCenterX() + (player.getWidth()*2)+this.getRadius(), this.getCenterY());
+            System.out.println("first" + this.getCenterX()+ " "+this.getCenterY());
+            this.setCenterX(player.getWidth()*2 + this.getRadius());
+            System.out.println("after" + this.getCenterX()+ " "+this.getCenterY());
             returnValue = true;
         }
         if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) {

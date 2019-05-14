@@ -57,6 +57,8 @@ public class Pong extends ApplicationAdapter {
             int difference = player.getPoints() - second.getPoints();
 
             if (difference >= 3 && difference <= 5) {
+                second.setSpeed(second.getSpeed());
+                player.setSpeed(player.getSpeed());
                 difficulty = 2;
             } else if (difference > 5) {
                 difficulty = 4;
