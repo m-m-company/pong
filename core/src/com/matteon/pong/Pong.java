@@ -78,6 +78,11 @@ public class Pong extends ApplicationAdapter {
                 second.moveDown(Gdx.graphics.getDeltaTime());
         }
 
+        if (player.getPoints() >3){
+            System.out.println(player.getPoints());
+            Gdx.app.exit();
+        }
+
         this.ballHandler();
         graphicManager.drawBonus(bonusManager.getBonus());
         graphicManager.drawBall(ball);

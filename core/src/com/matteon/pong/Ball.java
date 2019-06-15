@@ -41,9 +41,9 @@ public class Ball extends Circle {
             }
             dx = DEFAULT_DX;
             whoHittedMe = true;
-            System.out.println("first" + this.getCenterX()+ " "+this.getCenterY());
+           // System.out.println("first" + this.getCenterX()+ " "+this.getCenterY());
             this.setCenterX(player.getWidth()*2 + this.getRadius());
-            System.out.println("after" + this.getCenterX()+ " "+this.getCenterY());
+            //System.out.println("after" + this.getCenterX()+ " "+this.getCenterY());
             returnValue = true;
         }
         if (this.intersects(second.getX(), second.getY(), second.getWidth(), second.getHeight())) {
