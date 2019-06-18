@@ -9,38 +9,38 @@ import com.matteon.pong.Paddle;
 import java.util.Random;
 
 public abstract class Bonus extends Rectangle {
-    private static final int MIN_X_SPAWN = 80;
-    private static final int MAX_X_SPAWN = 720;
-    private static final int MIN_Y_SPAWN = 20;
-    private static final int MAX_Y_SPAWN = 580;
-    private final Texture texture;
-    Paddle affectedPaddle;
-    boolean isActive;
-    boolean used;
+	private static final int MIN_X_SPAWN = 80;
+	private static final int MAX_X_SPAWN = 720;
+	private static final int MIN_Y_SPAWN = 20;
+	private static final int MAX_Y_SPAWN = 580;
+	private final Texture texture;
+	Paddle affectedPaddle;
+	boolean isActive;
+	boolean used;
 
-    public boolean isUsed() {
-        return used;
-    }
+	public boolean isUsed() {
+		return used;
+	}
 
-    public boolean isActive() {
-        return isActive;
-    }
+	public boolean isActive() {
+		return isActive;
+	}
 
-    public Texture getTexture() {
-        return this.texture;
-    }
+	public Texture getTexture() {
+		return this.texture;
+	}
 
-    Bonus(String path) {
-        super(new Random().nextInt((Bonus.MAX_X_SPAWN - Bonus.MIN_X_SPAWN) + 1) + Bonus.MIN_X_SPAWN,
-                new Random().nextInt(MAX_Y_SPAWN - MIN_Y_SPAWN + 1) + MIN_Y_SPAWN, 20, 20);
-        this.texture = new Texture(Gdx.files.internal(path));
-    }
+	Bonus(String path) {
+		super(new Random().nextInt((Bonus.MAX_X_SPAWN - Bonus.MIN_X_SPAWN) + 1) + Bonus.MIN_X_SPAWN,
+				new Random().nextInt(MAX_Y_SPAWN - MIN_Y_SPAWN + 1) + MIN_Y_SPAWN, 20, 20);
+		this.texture = new Texture(Gdx.files.internal(path));
+	}
 
-    public abstract void activate(boolean whosLast, Paddle player1, Paddle player2);
+	public abstract void activate(boolean whosLast, Paddle player1, Paddle player2);
 
-    public boolean isHitted(Ball b) {
-        return b.intersects(this.x, this.y, this.width, this.height);
-    }
+	public boolean isHitted(Ball b) {
+		return b.intersects(this.x, this.y, this.width, this.height);
+	}
 
-    public abstract void deactivate();
+	public abstract void deactivate();
 }
