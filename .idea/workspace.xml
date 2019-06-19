@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8204aa32-4e93-4709-a38c-a9364e12ff21" name="Default Changelist" comment="bug fixes">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/Ball.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/Paddle.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/Paddle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/Pong.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/Pong.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusLenght.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusLenght.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/bonus/BonusPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/sound/SoundManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/sound/SoundManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/graphic/GraphicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/matteon/pong/managers/graphic/GraphicManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/Bonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusLenght.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusLenght.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/sound/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/matteon/pong/managers/sound/SoundManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -45,18 +31,15 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="108" column="53" lean-forward="true" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="53" />
+            <state relative-caret-position="399">
+              <caret line="64" column="54" lean-forward="true" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
               <folding>
-                <element signature="method#create#0;class#Pong#0" />
-                <element signature="e#1733#2022#1" />
-                <element signature="e#2028#3087#1" />
-                <element signature="e#2185#2336#1" />
-                <element signature="e#2571#2728#1" />
+                <element signature="method#ballHandler#0;class#Pong#0" />
+                <element signature="method#playAsSingleplayer#0;class#Pong#0" />
                 <element signature="method#simpleAI#0;class#Pong#0" />
                 <element signature="method#dispose#0;class#Pong#0" />
               </folding>
@@ -64,11 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="995">
-              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="253">
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,12 +89,12 @@
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusPoint.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/sound/SoundManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java" />
         <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusLenght.java" />
-        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java" />
       </list>
     </option>
   </component>
@@ -137,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,6 +140,12 @@
               <item name="pong" type="b2602c69:ProjectViewProjectNode" />
               <item name="pong" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pong" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -177,14 +170,13 @@
               <item name="src" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="pong" type="462c0819:PsiDirectoryNode" />
               <item name="managers" type="462c0819:PsiDirectoryNode" />
-              <item name="bonus" type="462c0819:PsiDirectoryNode" />
+              <item name="graphic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,9 +265,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1652452" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -284,7 +275,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.25893825" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.25893825" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -293,7 +284,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49733475" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021322" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Build" order="10" sideWeight="0.4978678" weight="0.0" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4989339" weight="0.032502707" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4989339" weight="0.20910075" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -354,16 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="70" column="56" lean-forward="true" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/sound/SoundManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -413,26 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/bonus/BonusSpeed.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -443,26 +404,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="108" column="53" lean-forward="true" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="53" />
+        <state relative-caret-position="383">
+          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
           <folding>
-            <element signature="method#create#0;class#Pong#0" />
-            <element signature="e#1733#2022#1" />
-            <element signature="e#2028#3087#1" />
-            <element signature="e#2185#2336#1" />
-            <element signature="e#2571#2728#1" />
-            <element signature="method#simpleAI#0;class#Pong#0" />
-            <element signature="method#dispose#0;class#Pong#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/core/assets/MenuSingle.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/assets/MenuMulti.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Paddle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="995">
-          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+        <state relative-caret-position="489">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/managers/graphic/GraphicManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/matteon/pong/Pong.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="64" column="54" lean-forward="true" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+          <folding>
+            <element signature="method#ballHandler#0;class#Pong#0" />
+            <element signature="method#playAsSingleplayer#0;class#Pong#0" />
+            <element signature="method#simpleAI#0;class#Pong#0" />
+            <element signature="method#dispose#0;class#Pong#0" />
+          </folding>
         </state>
       </provider>
     </entry>

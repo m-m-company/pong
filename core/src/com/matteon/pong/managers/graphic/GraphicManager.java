@@ -3,6 +3,7 @@ package com.matteon.pong.managers.graphic;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
@@ -16,10 +17,13 @@ import com.matteon.pong.managers.bonus.Bonus;
 import java.util.ArrayList;
 
 public class GraphicManager {
-
+	public  final static int WIDTH = 800;
+	public final static int HEIGHT= 600;
 	private final ArrayList<Rectangle> midField;
 	private final ShapeRenderer sh;
 	private final SpriteBatch batch;
+	private final Texture menuSingle;
+	private final Texture menuMulti;
 	private final OrthographicCamera camera;
 	private final FreeTypeFontGenerator generator;
 	private final FreeTypeFontGenerator.FreeTypeFontParameter parameter;
@@ -28,10 +32,12 @@ public class GraphicManager {
 	public GraphicManager() {
 		batch = new SpriteBatch();
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, 800, 600);
+		camera.setToOrtho(false, WIDTH,HEIGHT);
 		sh = new ShapeRenderer();
 		sh.setProjectionMatrix(camera.combined);
 		batch.setProjectionMatrix(camera.combined);
+		menuSingle = new Texture(Gdx.files.internal("MenuSingle.png"));
+		menuMulti = new Texture(Gdx.files.internal("MenuMulti.png"));
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("font.otf"));
 		parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		parameter.size = 30;
@@ -39,10 +45,20 @@ public class GraphicManager {
 		font = generator.generateFont(parameter);
 		midField = new ArrayList<Rectangle>();
 		int y = 0;
-		while (y <= 600) {
+		while (y <= HEIGHT) {
 			midField.add(new Rectangle(400, y, 20, 20));
 			y += 30;
 		}
+	}
+
+	public void drawMenu(boolean multiplayer){
+		batch.begin();
+		if (multiplayer){
+			batch.draw(menuMulti, 0, 0);
+		}
+		else
+			batch.draw(menuSingle, 0, 0);
+		batch.end();
 	}
 
 	public void drawBonus(Bonus bonus) {
