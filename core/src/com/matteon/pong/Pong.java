@@ -63,7 +63,8 @@ public class Pong extends ApplicationAdapter {
 
 			if (player.getPoints() > 9 || second.getPoints() > 9) {
 				System.out.println(player.getScore());
-				Gdx.app.exit();
+				this.create();
+				exitFromMenu = !exitFromMenu;
 			}
 
 			this.ballHandler();
