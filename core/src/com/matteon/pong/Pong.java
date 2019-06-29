@@ -43,6 +43,8 @@ public class Pong extends ApplicationAdapter {
 				bonusManager.spawnBonus();
 				delay = 0;
 			}
+			player.updateStats();
+			second.updateStats();
 			bonusManager.check(ball, player, second, ball.whoHittedMe);
 			if (Gdx.input.isKeyJustPressed(Input.Keys.Y))
 				player.addPoint();
@@ -66,8 +68,6 @@ public class Pong extends ApplicationAdapter {
 				this.create();
 				exitFromMenu = !exitFromMenu;
 			}
-			player.updateStats();
-			second.updateStats();
 			this.ballHandler();
 			graphicManager.drawBonus(bonusManager.getBonus());
 			graphicManager.drawBall(ball);
@@ -111,7 +111,7 @@ public class Pong extends ApplicationAdapter {
 
 	private void playAsSinglePlayer() {
 		int difficulty = 0;
-		int difference = player.getPoints() - second.getPoints();
+		int difference = Math.abs(player.getPoints() - second.getPoints());
 
 		if (difference >= 3 && difference <= 5) {
 			second.setCurrentDefaultSpeed(Paddle.DEFAULT_SPEED);

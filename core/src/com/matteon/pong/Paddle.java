@@ -78,6 +78,7 @@ public class Paddle extends Rectangle {
 					currentDefaultSpeed = DEFAULT_SPEED;
 					this.setSpeed(ADVANCED_SPEED);
 				}
+				myColor = Color.GREEN;
 			}
 		}
 	}
