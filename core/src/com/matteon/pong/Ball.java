@@ -1,6 +1,8 @@
 package com.matteon.pong;
 
 import com.badlogic.gdx.math.Vector2;
+import com.matteon.pong.managers.graphic.GraphicManager;
+
 import javafx.scene.shape.Circle;
 
 public class Ball extends Circle {
@@ -53,10 +55,10 @@ public class Ball extends Circle {
 			}
 			dx = -DEFAULT_DX;
 			whoHittedMe = false;
-			this.relocate(this.getCenterX() - (second.getWidth() * 2) - this.getRadius(), this.getCenterY());
+			this.setCenterX(GraphicManager.WIDTH-(second.getWidth()*2)-this.getRadius());
 			returnValue = true;
 		}
-		if (this.getCenterY() + this.getRadius() >= 600 || this.getCenterY() - this.getRadius() <= 0) {
+		if (this.getCenterY() + this.getRadius() >= GraphicManager.HEIGHT || this.getCenterY() - this.getRadius() <= 0) {
 			dy *= -1;
 			returnValue = false;
 		}

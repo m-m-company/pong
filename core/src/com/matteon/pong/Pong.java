@@ -25,9 +25,9 @@ public class Pong extends ApplicationAdapter {
 		graphicManager = new GraphicManager();
 		bonusManager = new BonusManager();
 		delay = 0;
-		player = new Paddle(Paddle.WIDTH, 300);
-		second = new Paddle(800 - Paddle.WIDTH * 2, 300);
-		ball = new Ball(800 / 2, 600 / 2, 15);
+		player = new Paddle(Paddle.WIDTH, GraphicManager.HEIGHT / 2);
+		second = new Paddle(GraphicManager.WIDTH - Paddle.WIDTH * 2, GraphicManager.HEIGHT / 2);
+		ball = new Ball(GraphicManager.WIDTH / 2, GraphicManager.HEIGHT / 2, 15);
 		multiplayer = false;
 	}
 
@@ -46,14 +46,14 @@ public class Pong extends ApplicationAdapter {
 			bonusManager.check(ball, player, second, ball.whoHittedMe);
 			if (Gdx.input.isKeyJustPressed(Input.Keys.Y))
 				player.addPoint();
-			if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < GraphicManager.HEIGHT-player.getHeight())
+			if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < GraphicManager.HEIGHT - player.getHeight())
 				player.moveUp(Gdx.graphics.getDeltaTime());
 			if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
 				player.moveDown(Gdx.graphics.getDeltaTime());
 			if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))
 				Gdx.app.exit();
 			if (multiplayer) {
-				if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < 555)
+				if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < GraphicManager.HEIGHT - second.getHeight())
 					second.moveUp(Gdx.graphics.getDeltaTime());
 				if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && second.getY() > 0)
 					second.moveDown(Gdx.graphics.getDeltaTime());
@@ -66,7 +66,8 @@ public class Pong extends ApplicationAdapter {
 				this.create();
 				exitFromMenu = !exitFromMenu;
 			}
-
+			player.updateStats();
+			second.updateStats();
 			this.ballHandler();
 			graphicManager.drawBonus(bonusManager.getBonus());
 			graphicManager.drawBall(ball);
@@ -89,7 +90,7 @@ public class Pong extends ApplicationAdapter {
 			ball.setCenterY(300);
 			soundManager.playGoal();
 		}
-		if (ball.getCenterX() > 800) {
+		if (ball.getCenterX() > GraphicManager.WIDTH) {
 			player.addPoint();
 			player.setScore(player.getScore() + 100);
 			second.setScore(second.getScore() - 100);
@@ -98,7 +99,8 @@ public class Pong extends ApplicationAdapter {
 			soundManager.playGoal();
 		}
 	}
-	private void menuHandler(){
+
+	private void menuHandler() {
 		graphicManager.drawMenu(multiplayer);
 		if (Gdx.input.isKeyJustPressed(Input.Keys.DOWN) || Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
 			multiplayer = !multiplayer;
@@ -106,32 +108,33 @@ public class Pong extends ApplicationAdapter {
 		if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER))
 			exitFromMenu = true;
 	}
-	private void playAsSinglePlayer(){
+
+	private void playAsSinglePlayer() {
 		int difficulty = 0;
 		int difference = player.getPoints() - second.getPoints();
 
 		if (difference >= 3 && difference <= 5) {
-			second.setSpeed(second.getSpeed());
-			player.setSpeed(player.getSpeed());
+			second.setCurrentDefaultSpeed(Paddle.DEFAULT_SPEED);
+			player.setCurrentDefaultSpeed(Paddle.DEFAULT_SPEED);
 			difficulty = 2;
 		} else if (difference > 5) {
 			difficulty = 4;
-			second.setSpeed(Paddle.DEFAULT_SPEED * 2);
-			player.setSpeed(Paddle.DEFAULT_SPEED * 2);
+			second.setCurrentDefaultSpeed(Paddle.ADVANCED_SPEED);
+			player.setCurrentDefaultSpeed(Paddle.ADVANCED_SPEED);
 			ball.setSpeedMode(1);
 		} else {
-			second.setSpeed(second.getSpeed());
-			player.setSpeed(player.getSpeed());
+			second.setCurrentDefaultSpeed(second.getSpeed());
+			player.setCurrentDefaultSpeed(player.getSpeed());
 			ball.setSpeedMode(0);
 		}
 
-		int direction = simpleAI(second.getX(), second.getY(), ball.getCenterX(), ball.getCenterY(),
-				difficulty);
-		if (direction == 1 && second.getY() < 555)
+		int direction = simpleAI(second.getX(), second.getY(), ball.getCenterX(), ball.getCenterY(), difficulty);
+		if (direction == 1 && second.getY() < GraphicManager.HEIGHT - second.getHeight())
 			second.moveUp(Gdx.graphics.getDeltaTime());
 		if (direction == 2 && second.getY() > 0)
 			second.moveDown(Gdx.graphics.getDeltaTime());
 	}
+
 	private int simpleAI(double myX, double myY, double ballX, double ballY, int difficulty) {
 		if (myX - ballX > 350 + difficulty * 70) {
 			return 0;
