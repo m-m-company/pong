@@ -46,16 +46,21 @@ public class Pong extends ApplicationAdapter {
 			bonusManager.check(ball, player, second, ball.whoHittedMe);
 			if (Gdx.input.isKeyJustPressed(Input.Keys.Y))
 				player.addPoint();
-			if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < GraphicManager.HEIGHT - player.getHeight())
-				player.moveUp(Gdx.graphics.getDeltaTime());
-			if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
-				player.moveDown(Gdx.graphics.getDeltaTime());
+			
 			if (multiplayer) {
+				if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < GraphicManager.HEIGHT - player.getHeight())
+					player.moveUp(Gdx.graphics.getDeltaTime());
+				if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
+					player.moveDown(Gdx.graphics.getDeltaTime());
 				if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < GraphicManager.HEIGHT - second.getHeight())
 					second.moveUp(Gdx.graphics.getDeltaTime());
 				if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && second.getY() > 0)
 					second.moveDown(Gdx.graphics.getDeltaTime());
 			} else {
+				if (Gdx.input.isKeyPressed(Input.Keys.UP) && player.getY() < GraphicManager.HEIGHT - player.getHeight())
+					player.moveUp(Gdx.graphics.getDeltaTime());
+				if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && player.getY() > 0)
+					player.moveDown(Gdx.graphics.getDeltaTime());
 				this.playAsSinglePlayer();
 			}
 			player.updateStats();
