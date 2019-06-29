@@ -43,8 +43,6 @@ public class Pong extends ApplicationAdapter {
 				bonusManager.spawnBonus();
 				delay = 0;
 			}
-			player.updateStats();
-			second.updateStats();
 			bonusManager.check(ball, player, second, ball.whoHittedMe);
 			if (Gdx.input.isKeyJustPressed(Input.Keys.Y))
 				player.addPoint();
@@ -52,8 +50,6 @@ public class Pong extends ApplicationAdapter {
 				player.moveUp(Gdx.graphics.getDeltaTime());
 			if (Gdx.input.isKeyPressed(Input.Keys.S) && player.getY() > 0)
 				player.moveDown(Gdx.graphics.getDeltaTime());
-			if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))
-				Gdx.app.exit();
 			if (multiplayer) {
 				if (Gdx.input.isKeyPressed(Input.Keys.UP) && second.getY() < GraphicManager.HEIGHT - second.getHeight())
 					second.moveUp(Gdx.graphics.getDeltaTime());
@@ -62,7 +58,8 @@ public class Pong extends ApplicationAdapter {
 			} else {
 				this.playAsSinglePlayer();
 			}
-
+			player.updateStats();
+			second.updateStats();
 			if (player.getPoints() > 9 || second.getPoints() > 9) {
 				System.out.println(player.getScore());
 				this.create();
@@ -76,6 +73,8 @@ public class Pong extends ApplicationAdapter {
 			graphicManager.drawPoints(player.getPoints(), second.getPoints());
 			graphicManager.drawMidfield();
 		}
+		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))
+			Gdx.app.exit();
 	}
 
 	private void ballHandler() {

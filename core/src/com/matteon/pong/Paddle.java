@@ -24,9 +24,11 @@ public class Paddle extends Rectangle {
 	public Integer getScore() {
 		return score;
 	}
+
 	public void setCurrentDefaultSpeed(Integer currentDefaultSpeed) {
 		this.currentDefaultSpeed = currentDefaultSpeed;
 	}
+
 	public void setScore(Integer score) {
 		this.score = score;
 		if (this.score < 0)
