@@ -1,6 +1,6 @@
 # Pong
 
-##Instructions
+## Instructions
 
 To play the game just select Singleplayer or 2 Players moving with ARROW KEYS and selecting
 with ENTER.
@@ -14,9 +14,9 @@ The game ends when a player get 10 goals.
 
 For pandoras the points are calculated in this way:
 
-	* +100 points for scoring a goal
-	* -100 points for enemy goal
-	* +50	points for every bonus you get
+	- +100 points for scoring a goal
+	- -100 points for enemy goal
+	- +50	points for every bonus you get
 
 Only left player points are communicated to Pandoras if you are playing in multiplayer.
 
