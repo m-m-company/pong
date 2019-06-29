@@ -8,6 +8,13 @@ import com.matteon.pong.managers.bonus.BonusManager;
 import com.matteon.pong.managers.graphic.GraphicManager;
 import com.matteon.pong.managers.sound.SoundManager;
 
+/*
+ * This is the main class
+ * The first method that's called is create()
+ * Then every frame the method render() is called
+ * At the end, the dispose() method is called
+ */
+
 public class Pong extends ApplicationAdapter {
 	private GraphicManager graphicManager;
 	private SoundManager soundManager;
@@ -32,21 +39,35 @@ public class Pong extends ApplicationAdapter {
 	}
 
 	@Override
+	public void dispose() {
+		soundManager.dispose();
+		graphicManager.dispose();
+	}
+	
+	@Override
 	public void render() {
+		//Clear the screen
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		
+		//If i'm in the menu just draw the menu;
 		if (!exitFromMenu) {
 			this.menuHandler();
 		} else {
+			//timer value
 			delay += Gdx.graphics.getDeltaTime();
 			if (delay > 10) {
 				bonusManager.spawnBonus();
 				delay = 0;
 			}
+			//check if a bonus has been catched
 			bonusManager.check(ball, player, second, ball.whoHittedMe);
+			
+			//cheat for trying the game
 			if (Gdx.input.isKeyJustPressed(Input.Keys.Y))
 				player.addPoint();
 			
+			//Player movements
 			if (multiplayer) {
 				if (Gdx.input.isKeyPressed(Input.Keys.W) && player.getY() < GraphicManager.HEIGHT - player.getHeight())
 					player.moveUp(Gdx.graphics.getDeltaTime());
@@ -61,16 +82,24 @@ public class Pong extends ApplicationAdapter {
 					player.moveUp(Gdx.graphics.getDeltaTime());
 				if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && player.getY() > 0)
 					player.moveDown(Gdx.graphics.getDeltaTime());
+				//"Enemy" player AI
 				this.playAsSinglePlayer();
 			}
 			player.updateStats();
 			second.updateStats();
+			
+			//End of the game
 			if (player.getPoints() > 9 || second.getPoints() > 9) {
+				//This is for Pandoras Jar
 				System.out.println(player.getScore());
+				
 				this.create();
 				exitFromMenu = !exitFromMenu;
 			}
+			
 			this.ballHandler();
+			
+			//Graphic stuffs
 			graphicManager.drawBonus(bonusManager.getBonus());
 			graphicManager.drawBall(ball);
 			graphicManager.drawPaddle(player);
@@ -78,6 +107,7 @@ public class Pong extends ApplicationAdapter {
 			graphicManager.drawPoints(player.getPoints(), second.getPoints());
 			graphicManager.drawMidfield();
 		}
+		
 		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))
 			Gdx.app.exit();
 	}
@@ -86,6 +116,7 @@ public class Pong extends ApplicationAdapter {
 		if (ball.update(player, second))
 			soundManager.playHit();
 
+		//Second player got a point!
 		if (ball.getCenterX() < 0) {
 			second.addPoint();
 			second.setScore(second.getScore() + 100);
@@ -94,6 +125,7 @@ public class Pong extends ApplicationAdapter {
 			ball.setCenterY(300);
 			soundManager.playGoal();
 		}
+		//First player got a point!
 		if (ball.getCenterX() > GraphicManager.WIDTH) {
 			player.addPoint();
 			player.setScore(player.getScore() + 100);
@@ -148,10 +180,5 @@ public class Pong extends ApplicationAdapter {
 		if (myY > ballY)
 			return 2;
 		return 0;
-	}
-
-	@Override
-	public void dispose() {
-		// batch.dispose();
 	}
 }

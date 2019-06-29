@@ -7,6 +7,11 @@ public class SoundManager {
 	private final Sound hit;
 	private final Sound goal;
 
+	public void dispose() {
+		hit.dispose();
+		goal.dispose();
+	}
+	
 	public SoundManager() {
 		hit = Gdx.audio.newSound(Gdx.files.internal("paddle.wav"));
 		goal = Gdx.audio.newSound(Gdx.files.internal("goal.wav"));

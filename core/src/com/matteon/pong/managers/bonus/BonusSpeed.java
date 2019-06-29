@@ -16,12 +16,12 @@ public class BonusSpeed extends Bonus {
 		} else {
 			affectedPaddle = player2;
 		}
-		affectedPaddle.getBonusses().addFirst(this);
+		affectedPaddle.getBonus().addFirst(this);
 	}
 
 	@Override
 	public void deactivate() {
 		this.isActive = false;
-		affectedPaddle.getBonusses().removeLast();
+		affectedPaddle.getBonus().removeLast();
 	}
 }

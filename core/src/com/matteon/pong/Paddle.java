@@ -15,7 +15,8 @@ public class Paddle extends Rectangle {
 	public static final int DEFAULT_SPEED = 200;
 	public static final int ADVANCED_SPEED = 400;
 	public Color myColor;
-	private Queue<Bonus> bonusses;
+	//Bonus
+	private Queue<Bonus> bonus;
 	private int speed;
 	private Integer points;
 	private Integer score;
@@ -61,18 +62,18 @@ public class Paddle extends Rectangle {
 		speed = DEFAULT_SPEED;
 		currentDefaultSpeed = DEFAULT_SPEED;
 		score = 0;
-		bonusses = new Queue<Bonus>();
+		bonus = new Queue<Bonus>();
 	}
 
 	public void updateStats() {
 		this.setHeight(HEIGHT);
 		this.setSpeed(currentDefaultSpeed);
 		this.myColor = Color.WHITE;
-		for (int i = bonusses.size - 1; i >= 0; i--) {
-			if (bonusses.get(i) instanceof BonusLenght) {
+		for (int i = bonus.size - 1; i >= 0; i--) {
+			if (bonus.get(i) instanceof BonusLenght) {
 				this.setHeight(HEIGHT + BonusLenght.AUGMENT);
 				myColor = Color.RED;
-			} else if (bonusses.get(i) instanceof BonusSpeed) {
+			} else if (bonus.get(i) instanceof BonusSpeed) {
 				if (this.speed == ADVANCED_SPEED) {
 					currentDefaultSpeed = ADVANCED_SPEED;
 					this.setSpeed(ADVANCED_SPEED * 2);
@@ -93,7 +94,7 @@ public class Paddle extends Rectangle {
 		this.y -= this.speed * deltaTime;
 	}
 
-	public Queue<Bonus> getBonusses() {
-		return bonusses;
+	public Queue<Bonus> getBonus() {
+		return bonus;
 	}
 }

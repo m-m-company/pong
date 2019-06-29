@@ -29,13 +29,23 @@ public class GraphicManager {
 	private final FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 	private final BitmapFont font;
 
+	public void dispose() {
+		batch.dispose();
+		sh.dispose();
+		menuMulti.dispose();
+		menuSingle.dispose();
+		font.dispose();
+	}
 	public GraphicManager() {
 		batch = new SpriteBatch();
 		camera = new OrthographicCamera();
+		//The camera will always show a WIDTH*HEIGHT resolution
 		camera.setToOrtho(false, WIDTH,HEIGHT);
 		sh = new ShapeRenderer();
+		//We like linear algebra
 		sh.setProjectionMatrix(camera.combined);
 		batch.setProjectionMatrix(camera.combined);
+		
 		menuSingle = new Texture(Gdx.files.internal("MenuSingle.png"));
 		menuMulti = new Texture(Gdx.files.internal("MenuMulti.png"));
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("font.otf"));
